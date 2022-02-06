@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import React, { useState, useEffect } from 'react';
 import { Navbar, Footer } from '../components';
 
@@ -22,6 +23,12 @@ export default function Home() {
       <Navbar />
 
       <header id="home" style={headerStyle}>
+        <Image
+          src="/img/header.jpg"
+          layout="fill"
+          objectFit="cover"
+          priority
+        />
         <div className="logo_content">
             <svg viewBox="26.453 -27.436 147.035 250">
                 <g>

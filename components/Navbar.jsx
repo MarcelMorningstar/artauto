@@ -30,19 +30,19 @@ class Navbar extends Component {
                 <Hamburger toggled={this.state.isOpen} toggle={() => this.setState({ isOpen: !this.state.isOpen })} duration={0.6} easing="linear" rounded />
 
                 <ul className="navigation">
-                    <li><Link to="home" duration={100} delay={0} smooth={true}>HOME</Link></li>
-                    <li><Link to="services" duration={100} delay={0} smooth={true} offset={-80}>PAKALPOJUMI</Link></li>
-                    <li><Link to="about-us" duration={100} delay={0} smooth={true} offset={-80}>PAR MUMS</Link></li>
-                    <li><Link to="gallery" duration={100} delay={0} smooth={true} offset={-80}>GALERIJA</Link></li>
-                    <li><Link to="contact-us" duration={100} delay={0} smooth={true} offset={-80}>KONTAKTI</Link></li>
+                    <li><Link to="home" duration={100} delay={0}>HOME</Link></li>
+                    <li><Link to="services" duration={100} delay={0} offset={-80}>PAKALPOJUMI</Link></li>
+                    <li><Link to="about-us" duration={100} delay={0} offset={-80}>PAR MUMS</Link></li>
+                    <li><Link to="gallery" duration={100} delay={0} offset={-80}>GALERIJA</Link></li>
+                    <li><Link to="contact-us" duration={100} delay={0} offset={-80}>KONTAKTI</Link></li>
                 </ul>
 
                 <ul className="mobile-navigation">
-                    <li><Link to="home" duration={100} delay={0} smooth={true} offset={-16} onClick={this.handleClick}>HOME</Link></li>
-                    <li><Link to="services" duration={100} delay={0} smooth={true} offset={-16} onClick={this.handleClick}>PAKALPOJUMI</Link></li>
-                    <li><Link to="about-us" duration={100} delay={0} smooth={true} offset={-16} onClick={this.handleClick}>PAR MUMS</Link></li>
-                    <li><Link to="gallery" duration={100} delay={0} smooth={true} offset={-16} onClick={this.handleClick}>GALERIJA</Link></li>
-                    <li><Link to="contact-us" duration={100} delay={0} smooth={true} offset={-16} onClick={this.handleClick}>KONTAKTI</Link></li>
+                    <li><Link to="home" duration={100} delay={0} offset={-16} onClick={this.handleClick}>HOME</Link></li>
+                    <li><Link to="services" duration={100} delay={0} offset={-16} onClick={this.handleClick}>PAKALPOJUMI</Link></li>
+                    <li><Link to="about-us" duration={100} delay={0} offset={-16} onClick={this.handleClick}>PAR MUMS</Link></li>
+                    <li><Link to="gallery" duration={100} delay={0} offset={-16} onClick={this.handleClick}>GALERIJA</Link></li>
+                    <li><Link to="contact-us" duration={100} delay={0} offset={-16} onClick={this.handleClick}>KONTAKTI</Link></li>
                 </ul>
             </nav>
         );

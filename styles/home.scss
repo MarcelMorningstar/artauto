@@ -1,11 +1,7 @@
 header {
+    position: relative;
     height: clamp(300px, 80vw, 950px);
     opacity: 0;
-    background-image: url("../public/img/header.jpg");
-    background-position: center;
-    background-position-y: 0;
-    background-size: cover;
-    background-repeat: no-repeat;
     animation: fade-slide-down 2s .1s ease forwards;
 
     @keyframes fade-slide-down {
@@ -21,9 +17,11 @@ header {
     }
 
     .logo_content {
-        position: relative;
+        position: absolute;
         z-index: 1;
         top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
     
         svg {
             width: 100%;
