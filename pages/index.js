@@ -1,30 +1,17 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Navbar, Footer } from '../components';
 
 export default function Home() {
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-      const onScroll = () => setOffset(window.pageYOffset);
-
-      window.removeEventListener('scroll', onScroll);
-      window.addEventListener('scroll', onScroll, { passive: true });
-      return () => window.removeEventListener('scroll', onScroll);
-  }, []);
-
-  const headerStyle = {
-    backgroundPositionY: offset * 0.4 + 'px',
-  };
-
   return (
     <div>
       <Navbar />
 
-      <header id="home" style={headerStyle}>
+      <header id="home">
         <Image
           src="/img/header.jpg"
+          alt='header'
           layout="fill"
           objectFit="cover"
           priority
@@ -124,12 +111,12 @@ export default function Home() {
               <h2>GALERIJA</h2>
             </div>
             <div className='gallery'>
-              <img src="/img/owner.jpg" />
-              <img src="/img/device2.jpg" />
-              <img src="/img/serviss.jpg" />
-              <img src="/img/device1.jpg" />
-              <img src="/img/device3.jpg" />
-              <img src="/img/autograph.png" />
+              <img src="/img/owner.jpg" alt='ARTauto' />
+              <img src="/img/device2.jpg" alt='ARTauto' />
+              <img src="/img/serviss.jpg" alt='ARTauto serviss' />
+              <img src="/img/device1.jpg" alt='ARTauto' />
+              <img src="/img/device3.jpg" alt='ARTauto' />
+              <img src="/img/autograph.png" alt='ARTauto' />
             </div>
           </div>
           
