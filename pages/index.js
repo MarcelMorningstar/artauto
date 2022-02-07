@@ -111,12 +111,12 @@ export default function Home() {
               <h2>GALERIJA</h2>
             </div>
             <div className='gallery'>
-              <img src="/img/owner.jpg" alt='ARTauto' />
-              <img src="/img/device2.jpg" alt='ARTauto' />
-              <img src="/img/serviss.jpg" alt='ARTauto serviss' />
-              <img src="/img/device1.jpg" alt='ARTauto' />
-              <img src="/img/device3.jpg" alt='ARTauto' />
-              <img src="/img/autograph.png" alt='ARTauto' />
+              <div><section><Image src="/img/owner.jpg" alt='ARTauto' width={3} height={4} layout="responsive" objectFit="contain"   /></section></div>
+              <div><section><Image src="/img/device2.jpg" alt='ARTauto' width="100%" height="100%" layout="responsive" objectFit="contain" /></section></div>
+              <div><section><Image src="/img/serviss.jpg" alt='ARTauto serviss' width={16} height={9} layout="responsive" objectFit="contain" /></section></div>
+              <div><section><Image src="/img/device1.jpg" alt='ARTauto' width="100%" height="100%" layout="responsive" objectFit="contain" /></section></div>
+              <div><section><Image src="/img/device3.jpg" alt='ARTauto' width={16} height={9} layout="responsive" objectFit="contain" /></section></div>
+              <div><Image src="/img/autograph.png" alt='ARTauto' width={16} height={9} layout="responsive" objectFit="contain" /></div>
             </div>
           </div>
           
