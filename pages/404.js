@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import styles from '../styles/error.module.scss'
+import styles from '../styles/error.module.scss';
 
-function Costume404() {
+export default function Costume404() {
   return (
     <div className={styles.container}>
         <div className={styles.box}>
@@ -26,5 +26,3 @@ function Costume404() {
     </div>
   );
 }
-
-export default Costume404;

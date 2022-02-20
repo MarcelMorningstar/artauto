@@ -2,7 +2,6 @@ import Head from 'next/head';
 import '../styles/globals.scss';
 import '../styles/navbar.scss';
 import '../styles/footer.scss';
-import '../styles/home.scss';
 
 function MyApp({ Component, pageProps }) {
   return (

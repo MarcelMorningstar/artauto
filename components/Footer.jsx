@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-function Footer() {
-    return (
-        <footer>Copyright © 2021 SIA ARTauto.LV</footer>
-    );
+export class Footer extends Component {
+  render() {
+    return <footer>Copyright © 2021 SIA ARTauto.LV</footer>;
+  }
 }
 
 export default Footer;

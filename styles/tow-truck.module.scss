@@ -1,0 +1,30 @@
+.container {
+    display: flex;
+    justify-content: center;
+
+    .col {
+        display: grid;
+        gap: 24px;
+        width: min(80vw, 800px);
+        box-sizing: border-box;
+        padding: 24px;
+        background-color: var(--color_light);
+
+        .row {
+            .title {
+
+            }
+
+            // .image_wrapper {
+            //     display: block;
+            //     position: relative;
+            // }
+        }
+    }
+
+    @media screen and (max-width: 831px) {
+        .col {
+            padding: 16px;
+        }
+    }
+}

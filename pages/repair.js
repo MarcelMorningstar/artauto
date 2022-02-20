@@ -1,10 +1,20 @@
 import React from 'react';
-import { Navbar, Footer } from '../components';
+import { Navbar, Footer, Info } from '../components';
+import global from '../styles/services.module.scss';
+import styles from '../styles/repair.module.scss';
 
 export default function Repair() {
     return (
-        <div>
+        <div className={global.container}>
             <Navbar />
+
+            <div className={global.content}>
+                <Info title='REMONTS'>
+                    
+                </Info>
+            </div>
+
+            <Footer />
         </div>
     );
 }
