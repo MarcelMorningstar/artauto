@@ -53,7 +53,7 @@ class Navbar extends Component {
         }
 
 
-        this.setState({ isOpen: false });
+        this.setState({ isOpen: false, langOpen: false });
     }
 
     render() {

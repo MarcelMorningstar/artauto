@@ -1,4 +1,6 @@
 @mixin hover {
+    transition: all .6s linear;
+
     @media (pointer: fine) {
         &:hover {
             color: var(--color-1);
@@ -41,7 +43,6 @@ nav {
                 text-decoration: none;
                 text-transform: uppercase;
                 cursor: pointer;
-                transition: all .6s linear;
 
                 @include hover;
             }
@@ -171,7 +172,6 @@ nav {
                     font-weight: 300;
                     letter-spacing: 1px;
                     cursor: pointer;
-                    transition: all .6s linear;
     
                     @include hover;
 
@@ -226,7 +226,6 @@ nav {
                     text-decoration: none;
                     text-transform: uppercase;
                     cursor: pointer;
-                    transition: all .6s linear;
 
                     @include hover;
                 }
