@@ -29,6 +29,7 @@ function Info({ id, children, title, text }) {
                     font-size: min(11vw, 32px);
                     font-weight: 400;
                     text-align: center;
+                    text-transform: uppercase;
                 }
     
                 .title::before {
@@ -51,6 +52,7 @@ function Info({ id, children, title, text }) {
                     text-align: center;
                     word-spacing: 1px;
                     letter-spacing: 1px;
+                    text-transform: uppercase;
                 }
 
                 @media screen and (max-width: 831px) {

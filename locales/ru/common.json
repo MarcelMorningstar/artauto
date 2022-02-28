@@ -1,0 +1,10 @@
+{
+    "nav1": "Начало",
+    "nav2": "Услуги",
+    "nav3": "О Нас",
+    "nav4": "Галерея",
+    "nav5": "Контакты",
+    "nav6": "Pусский",
+    "pic1": "/locales/russia-flag-round.png",
+    "padding": "0 0 0 25px"
+}
