@@ -35,6 +35,7 @@ class Navbar extends Component {
 
     handleScroll = () => this.setState({ isOpen: false, langOpen: false });
     handleResize = () => this.setState({ isOpen: false, langOpen: false });
+    
     handleClick = () => this.setState({ isOpen: false });
 
     onChangeValue = (e) => {

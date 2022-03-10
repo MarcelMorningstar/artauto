@@ -16,7 +16,7 @@ function Info({ id, children, title, text }) {
 
                 .titleWrapper {
                     width: min(80vw, 320px);
-                    margin-bottom: 60px;
+                    margin-bottom: 40px;
                     position: relative;
                     left: 50%;
                     transform: translateX(-50%);

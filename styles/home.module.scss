@@ -1,93 +1,17 @@
-.home {
-    position: relative;
-    height: clamp(300px, 80vw, 950px);
-    opacity: 0;
-    animation: fade-slide-down 2s .1s ease forwards;
-
-    @keyframes fade-slide-down {
-        0% {
-            transform: translateY(-64px);
-            opacity: 0;
-        }
-    
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    .logo_content {
-        position: absolute;
-        z-index: 1;
-        top: 100px;
-        left: 50%;
-        transform: translateX(-50%);
-    
-        .svg {
-            width: 100%;
-            height: clamp(100px, 20vw, 170px);
-            opacity: 0;
-            fill: var(--color_light);
-            animation: pop-in .6s .3s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
-        }
-    
-        .title {
-            opacity: 0;
-            color: var(--color_light);
-            font-size: clamp(24px, 7vw, 48px);
-            text-align: center;
-            line-height: 1.6em;
-            text-shadow: -2px 0px 7px black;
-            animation: pop-in .6s .5s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
-        }
-    
-        // h2 {
-        //     opacity: 0;
-        //     color: var(--color_light);
-        //     font-size: clamp(16px, 7vw, 24px);
-        //     text-align: center;
-        //     line-height: 1.6em;
-        //     animation: pop-in .6s .7s cubic-bezier(0, 0.9, 0.3, 1.2) forwards;
-        // }
-    
-        @keyframes pop-in {
-            0% {
-                opacity: 0;
-                transform: translateY(-64px) scale(.8);
-            }
-        
-            100% {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-    }
-
-    @media screen and (max-width: 831px) {
-        .logo_content {
-            top: 32px;
-        }
-    }
-}
-
 .content {
-    padding-top: 100px;
     padding-bottom: 180px;
-    margin-top: 40px;
+    margin-top: 60px;
     position: relative;
-    background-image: url("../public/img/wallpaper.jpg");
-    background-attachment: fixed;
-    background-repeat: repeat;
 
     > .box {
         display: grid;
-        row-gap: 64px;
+        row-gap: 16px;
     }
 
     @media screen and (max-width: 831px) {
         > .box {
             display: grid;
-            row-gap: 100px;
+            row-gap: 64px;
         }
     }
 
@@ -116,6 +40,13 @@
             .text {
                 flex: 1;
                 text-align: center;
+            }
+
+            .number {
+                margin-left: 4px;
+                color: var(--color-1);
+                text-decoration: none;
+                text-shadow: 0 0 2px black;
             }
 
             .svg {
@@ -167,7 +98,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: min(80vw, 800px);
+        width: min(80vw, 600px);
         height: auto;
         padding: 16px;
         position: relative;
@@ -296,10 +227,22 @@
                 padding-bottom: 8px;
 
                 .title {
+                    color: var(--color_dark);
                     text-transform: uppercase;
                 }
 
+                .phone {
+                    color: var(--color_dark);
+                    text-decoration: none;
+                }
+
+                .text {
+                    color: var(--color_dark);
+                }
+
                 .table {    
+                    color: var(--color_dark);
+
                     .tr {
                         .td:first-child {
                             padding: 0 8px 0 0;
@@ -329,47 +272,5 @@
                 }
             }
         }
-    }
-}
-
-/* decore */
-.top_line {
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-
-    .svg {
-        position: relative;
-        display: block;
-        width: calc(110% + 1.3px);
-        height: 41px;
-    }
-
-    .shape_fill {
-        fill: var(--color_dark);
-    }
-}
-
-.bottom_line {
-    position: absolute;
-    top: -2px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-
-    .svg {
-        position: relative;
-        display: block;
-        width: calc(100% + 1.3px);
-        height: 59px;
-    }
-
-    .shape_fill {
-        fill: var(--color_dark);
     }
 }

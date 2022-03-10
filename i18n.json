@@ -3,6 +3,9 @@
     "defaultLocale": "lv",
     "pages": {
         "*": ["common"],
-        "/": ["home"]
+        "/": ["home"],
+        "/repair": ["repair"],
+        "/tow-truck": ["tow-truck"],
+        "/shop": ["shop"]
     }
 }

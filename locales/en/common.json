@@ -6,5 +6,10 @@
     "nav5": "Contact Us",
     "nav6": "English",
     "pic1": "/locales/united-kingdom-flag-round.png",
-    "padding": "0 0 0 49px"
+    "padding": "0 0 0 49px",
+    "service1": "Repair",
+    "service2": "Tow Truck",
+    "service3": "Shop",
+    "error1": "PAGE NOT FOUND",
+    "error2": "Go Back Home"
 }
