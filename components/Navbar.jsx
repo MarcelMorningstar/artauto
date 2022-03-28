@@ -12,6 +12,9 @@ class Navbar extends Component {
             isOpen: false,
             langOpen: false,
         };
+
+        this.wrapperRef = React.createRef();
+        this.handleClickOutside = this.handleClickOutside.bind(this);
     }
 
     componentDidMount() {
@@ -26,17 +29,27 @@ class Navbar extends Component {
 
         window.addEventListener('scroll', this.handleScroll);
         window.addEventListener('resize', this.handleResize);
+        document.addEventListener("mousedown", this.handleClickOutside);
     }
 
     componentWillUnmount() {
         window.removeEventListener('scroll', this.handleScroll);
         window.removeEventListener('resize', this.handleResize);
+        document.removeEventListener("mousedown", this.handleClickOutside);
     }
 
     handleScroll = () => this.setState({ isOpen: false, langOpen: false });
     handleResize = () => this.setState({ isOpen: false, langOpen: false });
     
     handleClick = () => this.setState({ isOpen: false });
+
+    handleClickOutside(event) {
+        if (this.wrapperRef && !this.wrapperRef.current.contains(event.target)) {
+            if (this.state.isOpen == true) {
+                this.setState({ isOpen: false, langOpen: false });
+            }
+        }
+    }
 
     onChangeValue = (e) => {
         const locale = e.target.value;
@@ -61,7 +74,7 @@ class Navbar extends Component {
         const { t } = this.props.i18n;
 
         return (
-            <nav className={this.state.isOpen ? 'nav active' : 'nav'}>
+            <nav className={this.state.isOpen ? 'nav active' : 'nav'} ref={this.wrapperRef}>
                 <Hamburger toggled={this.state.isOpen} toggle={() => this.setState({ isOpen: !this.state.isOpen })} duration={0.6} easing="linear" rounded />
 
                 <ul className="navigation" style={{padding: t('common:padding')}}>
