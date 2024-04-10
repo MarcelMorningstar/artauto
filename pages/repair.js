@@ -1,10 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
+
 import useTranslation from 'next-translate/useTranslation';
+import { client } from '../sanity'
+
 import { Navbar, Footer, Info, Header } from '../components';
+
 import styles from '../styles/repair.module.scss';
 
-export default function Repair() {
+export default function Repair({ repair }) {
     const { t } = useTranslation();
 
     return (
@@ -22,16 +26,14 @@ export default function Repair() {
                 <Info title={t("common:service1")}>
                     <section className={styles.box}>
                         <div className={styles.text_box}>
-                            <p className={styles.text}>{t("repair:text1")}</p>
+                            <p className={styles.text}>{ repair.description1.text }</p>
                             <h3 className={styles.title}>{t("repair:title1")}</h3>
                             <ul className={styles.list}>
-                                <li>{t("repair:list1")}</li> 
-                                <li>{t("repair:list2")}</li>
-                                <li>{t("repair:list3")}</li>
-                                <li>{t("repair:list4")}</li> 
-                                <li>{t("repair:list5")}</li>
-                                <li>{t("repair:list6")}</li>
-                                <li>{t("repair:list7")}</li>
+                                {
+                                    repair.description1.list.map(item => (
+                                        <li>{ item }</li>
+                                    ))
+                                }
                             </ul> 
                         </div>
                     </section>
@@ -42,3 +44,11 @@ export default function Repair() {
         </div>
     );
 }
+
+export async function getServerSideProps({ locale }) {
+    const repair = await client.fetch(`*[_type == "home" && language == "${ locale }"][0]{
+      description1
+    }`);
+  
+    return { props: { repair } }
+  }

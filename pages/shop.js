@@ -1,10 +1,14 @@
 import React from 'react';
 import Head from 'next/head';
+
 import useTranslation from 'next-translate/useTranslation';
+import { client } from '../sanity'
+
 import { Navbar, Footer, Info, Header } from '../components';
+
 import styles from '../styles/shop.module.scss';
 
-export default function Shop() {
+export default function Shop({ shop }) {
     const { t } = useTranslation();
 
     return (
@@ -22,12 +26,14 @@ export default function Shop() {
                 <Info title={t("common:service3")}>
                     <section className={styles.box}>
                         <div className={styles.text_box}>
-                            <p className={styles.text}>{t("shop:text1")}<a className={styles.phone} href="tel:+37126118112">+371 26 118 112</a>{t("shop:text2")}</p>
+                            <p className={styles.text}>{ shop.description3.text }</p>
                             <h3 className={styles.title}>{t("shop:title1")}</h3>
                             <ul className={styles.list}>
-                                <li>{t("shop:list1")}</li> 
-                                <li>{t("shop:list2")}</li>
-                                <li>{t("shop:list3")}</li>
+                                {
+                                    shop.description3.list.map(item => (
+                                        <li>{ item }</li>
+                                    ))
+                                }
                             </ul> 
                         </div>
                     </section>
@@ -37,4 +43,12 @@ export default function Shop() {
             <Footer />
         </div>
     );
+}
+
+export async function getServerSideProps({ locale }) {
+    const shop = await client.fetch(`*[_type == "home" && language == "${ locale }"][0]{
+      description3
+    }`);
+  
+    return { props: { shop } }
 }

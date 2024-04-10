@@ -1,12 +1,16 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
+
 import useTranslation from 'next-translate/useTranslation';
+import { client } from '../sanity'
+
 import { Navbar, Footer, Info, Header } from '../components';
+
 import styles from '../styles/home.module.scss';
 
-export default function Home() {
+export default function Home({ home }) {
   const { t } = useTranslation();
 
   return (
@@ -38,8 +42,8 @@ export default function Home() {
                   </g>
                 </svg>
                 <h2 className={styles.title}>{t("common:service1")}</h2>
-                <p className={styles.text}>{t("home:service1text")}</p>
-                <Link href='/repair'><a className={styles.a}>{t("home:service-btn")}</a></Link>
+                <p className={styles.text}>{ home.shortdescription1 }</p>
+                <Link href='/repair' className={styles.a}>{t("home:service-btn")}</Link>
               </div>
               <div className={styles.box}>
                 <svg className={styles.svg} viewBox="0 0 512 512">
@@ -49,8 +53,8 @@ export default function Home() {
                   </g>
                 </svg>
                 <h2 className={styles.title}>{t("common:service2")}</h2>
-                <p className={styles.text}>{t("home:service2text")}<a className={styles.number} href='tel:+37126118112'>+37126118112</a></p>
-                <Link href='/tow-truck'><a className={styles.a}>{t("home:service-btn")}</a></Link>
+                <p className={styles.text}>{ home.shortdescription2 }</p>
+                <Link href='/tow-truck' className={styles.a}>{t("home:service-btn")}</Link>
               </div>
               <div className={styles.box}>
                 <svg className={styles.svg} viewBox="0 0 512 512">
@@ -60,27 +64,27 @@ export default function Home() {
                   </g>
                 </svg>
                 <h2 className={styles.title}>{t("common:service3")}</h2>
-                <p className={styles.text}>{t("home:service3text")}</p>
-                <Link href='/shop'><a className={styles.a}>{t("home:service-btn")}</a></Link>
+                <p className={styles.text}>{ home.shortdescription3 }</p>
+                <Link href='/shop' className={styles.a}>{t("home:service-btn")}</Link>
               </div>
             </div>
           </Info>
           
-          <Info id='about-us' title={t("common:nav3")} text={t("home:about-us-slogan")}>
+          <Info id='about-us' title={t("common:nav3")} text={home.slogan}>
             <div className={styles.about_us}>
-              <p>{t("home:about-us-text")}</p>
+              <p>{home.text}</p>
             </div>
           </Info>
           
-          <Info id="gallery" title={t("common:nav4")}>
-            <div className={styles.gallery}>
+          {/* <Info id="gallery" title={t("common:nav4")}> */}
+            {/* <div className={styles.gallery}>
               <div className={styles.wrapper}><section className={styles.wrapper}><Image src="/img/device1.jpg" alt='ARTauto' width={3} height={4} layout="responsive" objectFit="contain" /></section></div>
               <div className={styles.wrapper}><section className={styles.wrapper}><Image src="/img/device3.jpg" alt='ARTauto' width="100%" height="100%" layout="responsive" objectFit="contain" /></section></div>
               <div className={styles.wrapper}><section className={styles.wrapper}><Image src="/img/logo.jpg" alt='ARTauto' width={16} height={9} layout="responsive" objectFit="contain" /></section></div>
               <div className={styles.wrapper}><section className={styles.wrapper}><Image src="/img/device2.jpg" alt='ARTauto' width="100%" height="100%" layout="responsive" objectFit="contain" /></section></div>
               <div className={styles.wrapper}><section className={styles.wrapper}><Image src="/img/device4.png" alt='ARTauto' width={16} height={9} layout="responsive" objectFit="contain" /></section></div>
-            </div>
-          </Info>
+            </div> */}
+          {/* </Info> */}
           
           <Info id="contact-us" title={t("common:nav5")}>
             <div className={styles.contact_us}>
@@ -89,46 +93,26 @@ export default function Home() {
               <div className={styles.wrapper}>
                 <div className={styles.wrapper}>
                   <h3 className={styles.title}>{t("home:contact1")}</h3>
-                  <a className={styles.phone} href="tel:+37126118112">+371 26 118 112</a>
+                  <a className={styles.phone} href={`tel:${home.phone}`}>{ home.phone }</a>
                 </div>
                 
                 <div className={styles.wrapper}>
                   <h3 className={styles.title}>{t("home:contact2")}</h3>
-                  <span className={styles.text}>Rīgas iela 16 Rēzekne, Latvia</span>
+                  <span className={styles.text}>{ home.address }</span>
                 </div>
                 
                 <div className={styles.wrapper}>
                   <h3 className={styles.title}>{t("home:contact3")}</h3>
                   <table className={styles.table}>
                     <tbody>
-                      <tr className={styles.tr}>
-                        <td className={styles.td}>Mon:</td>
-                        <td className={styles.td}>09:00 - 16:00</td>
-                      </tr>
-                      <tr className={styles.tr}>
-                        <td className={styles.td}>Tue:</td>
-                        <td className={styles.td}>09:00 - 16:00</td>
-                      </tr>
-                      <tr className={styles.tr}>
-                        <td className={styles.td}>Wed:</td>
-                        <td className={styles.td}>09:00 - 16:00</td>
-                      </tr>
-                      <tr className={styles.tr}>
-                        <td className={styles.td}>Thu:</td>
-                        <td className={styles.td}>09:00 - 16:00</td>
-                      </tr>
-                      <tr className={styles.tr}>
-                        <td className={styles.td}>Fri:</td>
-                        <td className={styles.td}>09:00 - 16:00</td>
-                      </tr>
-                      <tr className={styles.tr}>
-                        <td className={styles.td}>Sat:</td>
-                        <td className={styles.td}>Closed</td>
-                      </tr>
-                      <tr className={styles.tr}>
-                        <td className={styles.td}>Sun:</td>
-                        <td className={styles.td}>Closed</td>
-                      </tr>
+                      {
+                        home.businessHours.map(item => (
+                          <tr className={styles.tr}>
+                            <td className={styles.td}>{ item.day }</td>
+                            <td className={styles.td}>{ item.hours }</td>
+                          </tr>
+                        ))
+                      }
                     </tbody>
                   </table>
                 </div>
@@ -141,4 +125,12 @@ export default function Home() {
       </section>
     </div>
   );
+}
+
+export async function getServerSideProps({ locale }) {
+  const home = await client.fetch(`*[_type == "home" && language == "${ locale }"][0]{
+    shortdescription1, shortdescription2, shortdescription3, slogan, text, phone, address, businessHours
+  }`);
+
+  return { props: { home } }
 }

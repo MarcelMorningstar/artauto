@@ -78,11 +78,11 @@ class Navbar extends Component {
                 <Hamburger toggled={this.state.isOpen} toggle={() => this.setState({ isOpen: !this.state.isOpen })} duration={0.6} easing="linear" rounded />
 
                 <ul className="navigation" style={{padding: t('common:padding')}}>
-                    <li><Link href='/'><a>{t('common:nav1')}</a></Link></li>
-                    <li><Link href='/#services'><a>{t('common:nav2')}</a></Link></li>
-                    <li><Link href='/#about-us'><a>{t('common:nav3')}</a></Link></li>
-                    <li><Link href='/#gallery'><a>{t('common:nav4')}</a></Link></li>
-                    <li><Link href='/#contact-us'><a>{t('common:nav5')}</a></Link></li>
+                    <li><Link href='/'>{t('common:nav1')}</Link></li>
+                    <li><Link href='/#services'>{t('common:nav2')}</Link></li>
+                    <li><Link href='/#about-us'>{t('common:nav3')}</Link></li>
+                    {/* <li><Link href='/#gallery'>{t('common:nav4')}</Link></li> */}
+                    <li><Link href='/#contact-us'>{t('common:nav5')}</Link></li>
                     <li className='lang_switch'>
                         <IoLanguage className='lang_icon' />
                         <img className='flag' src={t('common:pic1')} width={12} height={12}/>
@@ -95,20 +95,20 @@ class Navbar extends Component {
                                 <input id='lang2' type="radio" name="lang" value='ru' />
                                 <label htmlFor="lang2">Pусский</label>
                             </div>
-                            <div>
+                            {/* <div>
                                 <input id='lang3' type="radio" name="lang" value='en' />
                                 <label htmlFor="lang3">English</label>
-                            </div>
+                            </div> */}
                         </div>
                     </li>
                 </ul>
 
                 <ul className="mobile-navigation">
-                    <li><Link href='/'><a onClick={this.handleClick}>{t('common:nav1')}</a></Link></li>
-                    <li><Link href='/#services'><a onClick={this.handleClick}>{t('common:nav2')}</a></Link></li>
-                    <li><Link href='/#about-us'><a onClick={this.handleClick}>{t('common:nav3')}</a></Link></li>
-                    <li><Link href='/#gallery'><a onClick={this.handleClick}>{t('common:nav4')}</a></Link></li>
-                    <li><Link href='/#contact-us'><a onClick={this.handleClick}>{t('common:nav5')}</a></Link></li>
+                    <li><Link href='/' onClick={this.handleClick}>{t('common:nav1')}</Link></li>
+                    <li><Link href='/#services' onClick={this.handleClick}>{t('common:nav2')}</Link></li>
+                    <li><Link href='/#about-us' onClick={this.handleClick}>{t('common:nav3')}</Link></li>
+                    {/* <li><Link href='/#gallery' onClick={this.handleClick}>{t('common:nav4')}</Link></li> */}
+                    <li><Link href='/#contact-us' onClick={this.handleClick}>{t('common:nav5')}</Link></li>
                     <li>
                         <div className='lang' onClick={() => this.setState({ langOpen: !this.state.langOpen })}>
                             <IoLanguage className='lang_icon' />
@@ -123,7 +123,7 @@ class Navbar extends Component {
                                         switch (locale) {
                                             case "lv": temp = "Latviešu"; break;
                                             case "ru": temp = "Pусский"; break;
-                                            case "en": temp = "English"; break;
+                                            // case "en": temp = "English"; break;
                                         }
                                         return <button key={locale} value={locale} onClick={this.onChangeValue}>{temp}</button>
                                     }
