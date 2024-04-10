@@ -106,8 +106,8 @@ export default function Home({ home }) {
                   <table className={styles.table}>
                     <tbody>
                       {
-                        home.businessHours.map(item => (
-                          <tr className={styles.tr}>
+                        home.businessHours.map((item, id) => (
+                          <tr key={id} className={styles.tr}>
                             <td className={styles.td}>{ item.day }</td>
                             <td className={styles.td}>{ item.hours }</td>
                           </tr>

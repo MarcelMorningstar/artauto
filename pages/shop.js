@@ -30,8 +30,8 @@ export default function Shop({ shop }) {
                             <h3 className={styles.title}>{t("shop:title1")}</h3>
                             <ul className={styles.list}>
                                 {
-                                    shop.description3.list.map(item => (
-                                        <li>{ item }</li>
+                                    shop.description3.list.map((item, id) => (
+                                        <li key={id}>{ item }</li>
                                     ))
                                 }
                             </ul> 

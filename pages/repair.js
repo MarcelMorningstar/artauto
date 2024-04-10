@@ -30,8 +30,8 @@ export default function Repair({ repair }) {
                             <h3 className={styles.title}>{t("repair:title1")}</h3>
                             <ul className={styles.list}>
                                 {
-                                    repair.description1.list.map(item => (
-                                        <li>{ item }</li>
+                                    repair.description1.list.map((item, id) => (
+                                        <li key={id}>{ item }</li>
                                     ))
                                 }
                             </ul> 

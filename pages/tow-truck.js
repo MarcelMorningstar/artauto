@@ -30,8 +30,8 @@ export default function TowTruck({ towTruck }) {
                             <h3 className={styles.title}>{t("tow-truck:title1")}</h3>
                             <ul className={styles.list}>
                                 {
-                                    towTruck.description2.list.map(item => (
-                                        <li>{ item }</li>
+                                    towTruck.description2.list.map((item, id) => (
+                                        <li key={id}>{ item }</li>
                                     ))
                                 }
                             </ul>
