@@ -16,7 +16,8 @@ export default function Home({ home }) {
   return (
     <div>
       <Head>
-        <meta name="description" content="ARTauto autoserviss rēzekne parūpēsies par jūsu automašīnu. Автосервис ARTauto в Резекне позаботится о вашем автомобиле." />
+        <title>ARTauto</title>
+        <meta name="description" content="ARTauto autoserviss un evakuators Rēzeknē – mēs parūpēsimies par jūsu automašīnu. Автосервис и эвакуатор ARTauto в Резекне – позаботимся о вашем автомобиле." />
       </Head>
 
       <Navbar />
@@ -93,7 +94,7 @@ export default function Home({ home }) {
               <div className={styles.wrapper}>
                 <div className={styles.wrapper}>
                   <h3 className={styles.title}>{t("home:contact1")}</h3>
-                  <a className={styles.phone} href={`tel:${home.phone}`}>{ home.phone }</a>
+                  <Link className={styles.phone} href={`tel:${home.phone}`}>{ home.phone }</Link>
                 </div>
                 
                 <div className={styles.wrapper}>

@@ -100,11 +100,15 @@
         align-items: center;
         width: min(80vw, 600px);
         height: auto;
-        padding: 16px;
+        padding: 24px;
         position: relative;
         left: 50%;
         transform: translateX(-50%);
-        background-color: var(--color_light);  
+        background-color: var(--color_light);
+
+        p {
+            text-align: justify;
+        }
     }
 
     .gallery {

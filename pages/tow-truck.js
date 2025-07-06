@@ -14,7 +14,7 @@ export default function TowTruck({ towTruck }) {
     return (
         <div className={styles.container}>
             <Head>
-                <meta name="description" content="ARTauto evakuators ir profesionāla auto evakuācija. Эвакуатор ARTauto — это профессиональный автомобильный эвакуатор." />
+                <meta name="description" content="ARTauto evakuators – profesionāla un uzticama auto evakuācija. Эвакуатор ARTauto — профессиональная и надёжная эвакуация автомобилей." />
                 <title>ARTauto Evakuators</title>
             </Head>
 
