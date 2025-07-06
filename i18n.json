@@ -1,0 +1,11 @@
+{
+    "locales": ["lv", "ru"],
+    "defaultLocale": "lv",
+    "pages": {
+        "*": ["common"],
+        "/": ["home"],
+        "/repair": ["repair"],
+        "/tow-truck": ["tow-truck"],
+        "/shop": ["shop"]
+    }
+}

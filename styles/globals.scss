@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
+:root {
+    --color_dark: #414141;
+    --color_light: #EEEEEE;
+    --color-1: #b89e6b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Open Sans', sans-serif;
+    user-select: none;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: var(--color_dark);
+    background-image: url("../public/img/wallpaper.jpg");
+    background-attachment: fixed;
+    background-repeat: repeat;
+}
+
+p, li {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+// ::-webkit-scrollbar {
+//     width: 12px;
+// }
+
+// ::-webkit-scrollbar-thumb {
+//     background: rgba(240, 240, 240, 0.6);
+//     border-radius: 25px;
+//     border: 3px transparent solid;
+//     background-clip: padding-box;
+// }
+
+// ::-webkit-scrollbar-thumb:hover {
+//     background: rgba(240, 240, 240, 0.75);
+//     border: 3px transparent solid;
+//     background-clip: padding-box;
+// }
+
+// ::-webkit-scrollbar-thumb:active {
+//     background: rgba(240, 240, 240, 0.9);
+//     border: 3px transparent solid;
+//     background-clip: padding-box;
+// }

@@ -1,0 +1,15 @@
+{
+    "nav1": "Sākums",
+    "nav2": "Pakalpojumi",
+    "nav3": "Par mums",
+    "nav4": "Galerija",
+    "nav5": "Kontakti",
+    "nav6": "Latviešu",
+    "pic1": "/locales/latvia-flag-round.png",
+    "padding": "0 5px 0 0",
+    "service1": "Remonts",
+    "service2": "Evakuators",
+    "service3": "Veikals",
+    "error1": "LAPA NAV ATRASTA",
+    "error2": "Atgriezties uz Sākumu"
+}

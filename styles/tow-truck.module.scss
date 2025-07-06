@@ -1,0 +1,49 @@
+.container {
+    min-height: 100vh;
+    position: relative;
+
+    .content {
+        margin-top: 60px;
+        padding-bottom: 180px;
+
+        .box {
+            display: flex;
+            justify-content: center;
+
+            .text_box {
+                width: min(90vw, 800px);
+                box-sizing: border-box;
+                padding: 24px;
+                background-color: var(--color_light);
+                color: var(--color_dark);
+
+                .title {
+                    margin-bottom: 8px;
+                    text-transform: uppercase;
+                }
+
+                .text {
+                    margin-bottom: 4px;
+                }
+
+                .phone {
+                    margin-left: 4px;
+                    color: var(--color-1);
+                    white-space: nowrap;
+                    text-decoration: none;
+                }
+
+                .list {
+                    margin-left: 32px;
+                    margin-bottom: 16px;
+                }
+            }
+        }
+
+        @media screen and (max-width: 831px) {
+            .box {
+                padding: 16px;
+            }
+        }
+    }
+}

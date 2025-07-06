@@ -1,0 +1,15 @@
+{
+    "nav1": "Home",
+    "nav2": "Services",
+    "nav3": "About Us",
+    "nav4": "Gallery",
+    "nav5": "Contact Us",
+    "nav6": "English",
+    "pic1": "/locales/united-kingdom-flag-round.png",
+    "padding": "0 0 0 60px",
+    "service1": "Repair",
+    "service2": "Tow Truck",
+    "service3": "Shop",
+    "error1": "PAGE NOT FOUND",
+    "error2": "Go Back Home"
+}
