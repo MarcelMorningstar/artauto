@@ -6,7 +6,7 @@ import { GoogleTagManager } from '@next/third-parties/google'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div>
+    <>
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -14,9 +14,9 @@ function MyApp({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <title>ARTauto</title>
       </Head>
-      <GoogleTagManager gtmId={process.env.GOOGLE_TAG_MANAGER_ID} />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID} />
       <Component {...pageProps} />
-    </div>
+    </>
   );
 }
 
