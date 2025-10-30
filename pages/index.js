@@ -22,7 +22,7 @@ export default function Home({ home }) {
 
       <Navbar />
 
-      <Header />
+      <Header phone={home.phone} />
 
       <section className={styles.content}>
         <div className={styles.box}>
