@@ -17,7 +17,8 @@ export default function Home({ home }) {
     <div>
       <Head>
         <title>ARTauto</title>
-        <meta name="description" content="ARTauto autoserviss un evakuators Rēzeknē – mēs parūpēsimies par jūsu automašīnu. Автосервис и эвакуатор ARTauto в Резекне – позаботимся о вашем автомобиле." />
+        <meta name="description" content={t('common:metaDescription')} />
+        <meta name="keywords" content={t('common:metaKeywords')} />
       </Head>
 
       <Navbar />
