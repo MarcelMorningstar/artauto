@@ -16,7 +16,7 @@ function Header({ phone}) {
     return (
         <header id="home" className='home'>
             <Image
-                src="/img/header.jpg"
+                src="/img/header.png"
                 alt='header'
                 layout="fill"
                 objectFit="cover"
